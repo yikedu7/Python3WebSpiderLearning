@@ -11,6 +11,9 @@
 import urllib.parse
 import urllib.request
 
+#Note: 'data' shoule be 'bytes' type
+#          urlopen() could be GET or POST
+
 data = bytes(urllib.parse.urlencode({'word': 'hello'}), encoding = 'utf-8')
 reponse = urllib.request.urlopen('http://httpbin.org/post', data = data)
 print(reponse.read())
@@ -36,6 +39,8 @@ except urllib.error.URLError as e:
 
 
 from urllib import request, parse
+
+#Note: 'data' shoule be 'bytes' type
 
 url = 'http://httpbin.org/post'
 headers = {
